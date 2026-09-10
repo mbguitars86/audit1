@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f3ef; color: #20201e; }
+button { font: inherit; }
+.landing { min-height: 100vh; display: grid; place-items: center; padding: 32px; }
+.landing > div { max-width: 760px; text-align: center; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; font-weight: 800; color: #77736b; margin: 0 0 18px; }
+.landing h1 { font-size: clamp(38px, 7vw, 72px); line-height: 1.02; letter-spacing: -.04em; margin: 0; }
+.lead { font-size: 20px; line-height: 1.55; color: #65615a; max-width: 650px; margin: 24px auto; }
+.micro, .hint { color: #8a857c; font-size: 14px; }
+.primary { background: #20201e; color: #fff; border: 0; border-radius: 12px; padding: 15px 22px; font-weight: 750; cursor: pointer; }
+.shell { min-height: 100vh; max-width: 920px; margin: auto; padding: 22px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #77736b; }
+.topbar b { color: #20201e; letter-spacing: .08em; }
+.progress { height: 5px; background: #dedbd4; border-radius: 99px; margin: 22px 0 45px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: #20201e; border-radius: 99px; transition: width .2s ease; }
+.card, .results { background: #fff; border: 1px solid #e5e1d9; border-radius: 24px; padding: clamp(28px, 6vw, 64px); box-shadow: 0 12px 40px rgba(40,35,25,.06); }
+.card h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.05; letter-spacing: -.035em; margin: 0; }
+.hint { margin: 20px 0 30px; }
+.scale { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; }
+.scale button { min-height: 72px; border: 1px solid #d9d5cc; background: #faf9f7; border-radius: 12px; cursor: pointer; }
+.scale button:hover, .scale button.selected { background: #20201e; color: #fff; border-color: #20201e; }
+.scale small { display: block; font-size: 10px; margin-top: 4px; opacity: .7; min-height: 12px; }
+.back, .topbar button, .actions button:not(.primary) { margin-top: 25px; border: 1px solid #d8d4cc; background: transparent; border-radius: 10px; padding: 10px 15px; cursor: pointer; }
+.back:disabled { opacity: .3; cursor: not-allowed; }
+.results h1 { font-size: 90px; line-height: 1; margin: 0; }
+.results h1 span { font-size: 25px; color: #999; }
+.bars { margin-top: 45px; display: grid; gap: 22px; }
+.label { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.label span { color: #777; }
+.bar { height: 10px; background: #e8e5de; border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #20201e; border-radius: 99px; }
+.actions { display: flex; gap: 10px; margin-top: 45px; }
+.actions button:not(.primary) { margin-top: 0; }
+@media (max-width: 650px) { .scale { grid-template-columns: repeat(5, 1fr); } .card, .results { border-radius: 18px; } .actions { flex-direction: column; } .actions button { width: 100%; } }
+@media print { body { background: #fff; } .topbar button, .actions { display: none; } .results { box-shadow: none; border: 0; padding: 0; } }
