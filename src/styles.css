@@ -22,14 +22,33 @@ button { font: inherit; }
 .scale small { display: block; font-size: 10px; margin-top: 4px; opacity: .7; min-height: 12px; }
 .back, .topbar button, .actions button:not(.primary) { margin-top: 25px; border: 1px solid #d8d4cc; background: transparent; border-radius: 10px; padding: 10px 15px; cursor: pointer; }
 .back:disabled { opacity: .3; cursor: not-allowed; }
-.results h1 { font-size: 90px; line-height: 1; margin: 0; }
-.results h1 span { font-size: 25px; color: #999; }
-.bars { margin-top: 45px; display: grid; gap: 22px; }
+.notice { margin: 0 0 18px; padding: 14px 16px; background: #fff8e8; border: 1px solid #eadbb7; border-radius: 12px; color: #665735; font-size: 14px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 30px 0 55px; }
+.summary-grid > div { padding: 24px; background: #f7f5f1; border-radius: 16px; }
+.summary-grid span { display: block; color: #77736b; font-size: 13px; margin-bottom: 8px; }
+.summary-grid strong { font-size: 48px; line-height: 1; letter-spacing: -.04em; }
+.summary-grid small { font-size: 16px; color: #999; letter-spacing: 0; }
+.insight-section { margin-top: 58px; }
+.insight-section h2 { font-size: clamp(26px, 4vw, 38px); letter-spacing: -.03em; margin: 0 0 12px; }
+.section-copy { color: #65615a; line-height: 1.6; max-width: 700px; }
+.priority-list { display: grid; gap: 12px; margin-top: 24px; }
+.priority-card { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; padding: 18px; border: 1px solid #e5e1d9; border-radius: 14px; }
+.priority-card .rank { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #20201e; color: #fff; font-weight: 800; }
+.priority-card p { margin: 5px 0 0; color: #77736b; font-size: 13px; line-height: 1.45; }
+.priority-card > strong { font-size: 20px; }
+.bars { margin-top: 28px; display: grid; gap: 22px; }
 .label { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .label span { color: #777; }
-.bar { height: 10px; background: #e8e5de; border-radius: 99px; overflow: hidden; }
-.bar i { display: block; height: 100%; background: #20201e; border-radius: 99px; }
-.actions { display: flex; gap: 10px; margin-top: 45px; }
+.bar, .gap-track { height: 10px; background: #e8e5de; border-radius: 99px; overflow: hidden; }
+.bar i, .gap-track i { display: block; height: 100%; background: #20201e; border-radius: 99px; }
+.gap-track i.negative { background: #999; }
+.metric-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 7px; color: #8a857c; font-size: 11px; }
+.status { font-weight: 700; }
+.callout { padding: 26px; background: #f7f5f1; border-radius: 18px; }
+.insight-section ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+.insight-section li { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid #ece9e2; }
+.insight-section li span { color: #77736b; font-size: 13px; text-align: right; }
+.actions { display: flex; gap: 10px; margin-top: 55px; }
 .actions button:not(.primary) { margin-top: 0; }
-@media (max-width: 650px) { .scale { grid-template-columns: repeat(5, 1fr); } .card, .results { border-radius: 18px; } .actions { flex-direction: column; } .actions button { width: 100%; } }
-@media print { body { background: #fff; } .topbar button, .actions { display: none; } .results { box-shadow: none; border: 0; padding: 0; } }
+@media (max-width: 650px) { .scale { grid-template-columns: repeat(5, 1fr); } .card, .results { border-radius: 18px; } .actions { flex-direction: column; } .actions button { width: 100%; } .summary-grid { grid-template-columns: 1fr; } .priority-card { grid-template-columns: 34px 1fr; } .priority-card > strong { grid-column: 2; } .insight-section li { flex-direction: column; gap: 5px; } .insight-section li span { text-align: left; } }
+@media print { body { background: #fff; } .topbar button, .actions, .notice { display: none; } .results { box-shadow: none; border: 0; padding: 0; } .insight-section { break-inside: avoid; } }
