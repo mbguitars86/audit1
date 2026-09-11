@@ -2,6 +2,14 @@
 
 A mobile-first personal priorities assessment for adults who want a clearer picture of what matters, where attention is going, and what should change next.
 
+## Public app
+
+Once GitHub Pages is enabled for this repository using GitHub Actions, the production app is published at:
+
+`https://mbguitars86.github.io/audit1/`
+
+Every push to `main` automatically rebuilds and redeploys the app through `.github/workflows/deploy-pages.yml`.
+
 ## Current product
 
 - 24 questions across 8 life categories
@@ -53,6 +61,14 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+Production deployment uses GitHub Pages and GitHub Actions.
+
+- Vite is configured with the `/audit1/` base path.
+- The deployment workflow installs dependencies, runs the production build, uploads `dist`, and deploys it to GitHub Pages.
+- Repository Settings → Pages must use **GitHub Actions** as the build and deployment source.
+
 ## Manual test checklist
 
 1. Complete all 24 questions.
@@ -64,6 +80,7 @@ npm run preview
 7. Download the PDF report and confirm it opens correctly.
 8. Test Print Results.
 9. Start a new assessment, leave midway, reload, and confirm Continue Assessment resumes correctly.
+10. Open the public GitHub Pages URL on a separate device and verify the assessment loads without a GitHub login.
 
 ## Product validation
 
