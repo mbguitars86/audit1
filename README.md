@@ -1,17 +1,43 @@
 # Life Priorities
 
-A mobile-first personal priorities assessment for adults who want a clearer picture of what matters, where attention is going, and where those two may disagree.
+A mobile-first personal priorities assessment for adults who want a clearer picture of what matters, where attention is going, and what should change next.
 
-## MVP
+## Current product
 
 - 24 questions across 8 life categories
-- 1–10 responses
-- 0–100 category scores
-- Overall priority profile
-- Results sorted by score
-- Progress saved in browser local storage
-- Print-friendly results
-- Resumes at the first unanswered question
+- 1–10 ratings for importance, current attention, and satisfaction
+- Priority-gap analysis: importance minus attention
+- 0–100 action-priority score
+- Priority Balance and Average Satisfaction summaries
+- Top 3 action priorities with category-specific recommendations
+- 30-day action plan with progress status
+- Save completed assessments on the device
+- Previous Assessment history
+- Compare any two saved assessments over time
+- Download a self-contained PDF report without an external PDF library
+- Print-friendly results and comparison views
+- Draft progress saved in browser local storage
+- Resume at the first unanswered question
+
+## Categories
+
+Health, Wealth, Family & Relationships, Career & Goals, Lifestyle & Time, Purpose & Legacy, Needs, and Wants.
+
+## Scoring model
+
+For each category:
+
+- `gap = importance - attention`
+- Underinvested: gap of `+3` or more
+- Overinvested: gap of `-3` or less
+- Needs attention: importance of at least `7` and satisfaction of `4` or less, when not already classified as underinvested
+- Action Priority = 50% importance + 30% positive gap + 20% dissatisfaction, scaled to 0–100
+
+The action-priority score is not a statement of personal worth or objective importance. It is a decision aid for identifying where deliberate action may have the highest value.
+
+## Data and privacy
+
+The MVP has no account system or remote database. Draft answers and saved assessments remain in the browser's local storage unless the user downloads, prints, shares, or clears them.
 
 ## Run locally
 
@@ -27,10 +53,18 @@ npm run build
 npm run preview
 ```
 
-## Categories
+## Manual test checklist
 
-Health, Wealth, Family & Relationships, Career & Goals, Lifestyle & Time, Purpose & Legacy, Needs, and Wants.
+1. Complete all 24 questions.
+2. Confirm the result screen renders Priority Balance, Average Satisfaction, Top 3 priorities, gaps, recommendations, and the 30-day plan.
+3. Change 30-day plan statuses and save the assessment.
+4. Return to Home and open Previous Assessments.
+5. Open the saved assessment and confirm its values remain intact.
+6. Complete and save a second assessment, then compare the two.
+7. Download the PDF report and confirm it opens correctly.
+8. Test Print Results.
+9. Start a new assessment, leave midway, reload, and confirm Continue Assessment resumes correctly.
 
-## Next product milestone
+## Product validation
 
-The next major improvement is a true priority-gap model that compares importance against current attention, then turns the gap into actionable recommendations instead of merely producing eight numbers.
+See `PRODUCT_VALIDATION_PLAN.md` for the first structured user-testing round.
